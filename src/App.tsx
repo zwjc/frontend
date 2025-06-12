@@ -4,8 +4,8 @@ import './App.css';
 
 const App: React.FC = () => (
   <div style={{ fontFamily: 'sans-serif', textAlign: 'center', marginTop: '2rem' }}>
-    <h1>🚀 Hello, Cloudflare Pages!</h1>
-    <p>Your React + TypeScript site is live.</p>
+    <h1>Hello World!</h1>
+    <p>Web Dev testing.</p>
   </div>
 );
 
