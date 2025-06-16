@@ -1,0 +1,247 @@
+---
+import { Image } from 'astro:assets';
+import project1 from '../assets/project1.png';
+import project2 from '../assets/project2.png';
+import project4 from '../assets/project4.png';
+import kth from '../assets/kth.jpeg';
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects</title>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/5c24dc808e.js" crossorigin="anonymous"></script>
+    <style>
+    body {
+        text-align: center;
+        font-family: 'Quicksand', sans-serif;
+        background-color: #d6ffff;
+    }
+    
+    h1 {
+        margin-top: 2%;
+        font-weight: bold;
+        font-size: xx-large;
+    }
+
+    h2 {
+        text-align: center;
+        font-weight: 700;
+        border-top: 0px solid #000;
+        margin-top: 20px;
+        margin-bottom: 2px;
+        padding-bottom: 0.1%;
+        position: relative;
+    }
+
+    h2:after {
+        content: '';
+        display: block;
+        width: 96%;
+        height: 1px;
+        background: #000;
+        position: absolute;
+        left: 50%;
+        top: 0;
+        transform: translateX(-50%);
+    }
+
+    ul {
+        margin-bottom: 2%;
+        text-align: left;
+        margin-left: 3%;
+    }
+
+    a {
+        color: #a200ff;
+    }
+
+    .button {
+        display: inline-block;
+        padding: 5px 10px;
+        background-color: #008080;
+        color: rgb(255, 232, 232);
+        text-align: center;
+        border-radius: 100px;
+        text-decoration: salmon;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+        transition: all; transition-duration: 350ms;
+        margin-bottom: 2%;
+        margin-right: 1%;
+    }
+
+    .button:hover {
+        background-color: #3c00b3;
+        transform: scale(0.95);
+    }
+      
+    .projects-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        padding: 20px;
+        margin: auto;
+        max-width: 1000px;
+    }
+
+    @media (max-width: 768px) {
+      .projects-container {
+          grid-template-columns: 1fr;
+      }
+    }
+
+    .project-card {
+        position: relative;
+        background: #eed5fd;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        border-radius: 8px;
+        overflow: hidden;
+        transition: transform 0.3s ease;
+    }
+
+    .project-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 4px 10px #008080;
+      }
+
+    .project-image1 {
+        width: 100%;
+        height: 280px;
+        object-fit: cover;
+        border-radius: 8px 0 0 8px;
+        object-position: center 10%;
+      }
+
+    .project-image2 {
+        width: 100%;
+        height: 280px;
+        object-fit: cover;
+        border-radius: 8px 0 0 8px;
+      }
+
+    .project-image3 {
+        width: 100%;
+        height: 280px;
+        object-fit: cover;
+        border-radius: 8px 0 0 8px;
+        object-position: 70% center;
+      }
+
+    .project-image4 {
+        width: 100%;
+        height: 280px;
+        object-fit: cover;
+        border-radius: 8px 0 0 8px;
+        object-position: center -1%;
+      }
+
+    .project-info {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background-color: rgba(255, 255, 255, 0.85);
+        color: #333;
+        padding: 10px;
+        border-radius: 0 0 8px 8px;
+    }
+
+    .project-title {
+        margin: 0;
+        color: #333;
+        font-size: 1.2em;
+      }
+
+    .project-description {
+        color: #666;
+        font-size: 0.9em;
+      }
+
+    .fade-out {
+        animation: fadeOut 350ms ease;
+        opacity: 0;
+    }
+
+    @keyframes fadeOut {
+        from { opacity: 1; }
+        to { opacity: 0; }
+    }
+
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Projects</h1>
+    </header>
+
+    <div class="projects-container">
+        <a href="https://noahpe0.wixsite.com/klantboll/game" target="_blank" class="project-card">
+        <Image src={project1} alt="Project 1" class="project-image1"/>
+        <div class="project-info">
+            <h3 class="project-title">Unity3D Game Development</h3>
+            <p class="project-description">
+            This was a project in the course II1305 which involved using Scrum and 
+            Agile methodologies to create a football game with powerups, multiplayer functionalities and AI opponents. 
+            Made in Unity3D and using C# for development.
+            </p>
+        </div>
+        </a>
+
+        <a href="https://pokeme-dh2642.web.app" target="_blank" class="project-card">
+        <Image src={project2} alt="Project 2" class="project-image2"/>
+        <div class="project-info">
+            <h3 class="project-title">Dynamic Web Application</h3>
+            <p class="project-description">
+            A project in frontend development and interaction programming using the React framework and Javascript, for the course DH2642.
+            We used both a ChatGPT API and a Pokémon API to create a matching web application for personality and pokémon.
+            </p>
+        </div>
+        </a>
+
+        <a href="https://lab-tw.web.app/react.html" target="_blank" class="project-card">
+        <Image src={kth} alt="Project 3" class="project-image3"/>
+        <div class="project-info">
+            <h3 class="project-title">DH2642 Course Lab</h3>
+            <p class="project-description">
+            A DinnerModel planner for making food and finding recipes. 
+            Created with React and Javascript for the course DH2642 in interaction programming and dynamic web.
+            </p>
+        </div>
+        </a>
+
+        <a href="https://jeffreychang.org" target="_blank" class="project-card">
+        <Image src={project4} alt="Project 4" class="project-image4"/>
+        <div class="project-info">
+            <h3 class="project-title">Personal Website</h3>
+            <p class="project-description">This website, made for fun and personal use.</p>
+        </div>
+        </a>
+    </div>
+
+    <footer>
+      <a href="/" class="button">Back to Start</a>
+      <a href="/cv" class="button">See my CV</a>
+    </footer>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const transitionLinks = document.querySelectorAll('a.button');
+
+                transitionLinks.forEach(link => {
+                    link.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        document.body.classList.add('fade-out');
+
+                        setTimeout(() => {
+                            window.location.href = this.getAttribute('href');
+                        }, 350);
+                    });
+                });
+            });
+        </script>
+  </body>
+</html>
