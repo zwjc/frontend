@@ -24,13 +24,30 @@
   color: white;
 }
 
+:root {
+  /* Primary palette */
+  --color-base-dark:    #22506d;
+  --color-secondary-dark: #195833;
+  --color-midtone-bright: #53d084;
+  --color-accent-bright:  #66e279;
+
+  /* Neutral palette */
+  --color-neutral-warm:   #f0ebe2;
+  --color-neutral-mid:    #cdc6bb;
+  --color-neutral-cool:   #9ea298;
+
+  /* Complementary pop */
+  --color-complementary-pop: #da8a62;
+}
+
+
 .App-link {
   color: #61dafb;
 }
 
 @font-face {
-  font-family: 'Montserrat-Medium';
-  src: url('D:\GitHub\website\public\fonts\Montserrat-LightItalic.woff2') format('woff2');
+  font-family: 'Montserrat-Regular';
+  src: url('/fonts/Montserrat-Regular.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
   font-display: normal;
@@ -43,4 +60,42 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+/* Base page styles */
+body {
+  margin: 0;
+  font-family: 'Montserrat-Regular', sans-serif;
+  background-color: var(--color-neutral-warm);
+  color: var(--color-base-dark);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* App container */
+.App {
+  text-align: center;
+  padding: 2rem;
+}
+
+/* Headings */
+.App h1 {
+  color: var(--color-secondary-dark);
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Paragraphs */
+.App p {
+  color: var(--color-base-dark);
+  font-size: 1.125rem;
+}
+
+/* Links */
+.App a {
+  color: var(--color-accent-bright);
+  text-decoration: none;
+}
+.App a:hover {
+  color: var(--color-midtone-bright);
 }
