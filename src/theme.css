@@ -1,0 +1,62 @@
+@font-face {
+  font-family: 'MontserratLightItalic';
+  src: url('./fonts/Montserrat-LightItalic.woff2') format('woff2');
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'MontserratRegular';
+  src: url('./fonts/Montserrat-Regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+:root {
+  /* Font stacks */
+  --font-sans: 'MontserratRegular', system-ui, sans-serif;
+  --font-italic: 'MontserratLightItalic', system-ui, sans-serif;
+
+  /* Color palette */
+  --color-base-dark:    #22506d;
+  --color-secondary-dark: #195833;
+  --color-midtone-bright: #53d084;
+  --color-accent-bright:  #66e279;
+  --color-neutral-warm:   #f0ebe2;
+  --color-neutral-mid:    #cdc6bb;
+  --color-neutral-cool:   #9ea298;
+  --color-complementary-pop: #da8a62;
+
+  /* Spacing scale */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 1rem;
+  --space-4: 2rem;
+
+  /* Border radius */
+  --radius: 0.5rem;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  background-color: var(--color-neutral-warm);
+  color: var(--color-base-dark);
+}
+
+a {
+  color: var(--color-accent-bright);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--color-midtone-bright);
+}
+
+button {
+  font-family: var(--font-sans);
+  padding: var(--space-2) var(--space-4);
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+}
