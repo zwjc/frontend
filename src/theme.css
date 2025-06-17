@@ -12,10 +12,27 @@
   font-style: normal;
   font-display: swap;
 }
+
+@font-face {
+  font-family: 'MontserratBold';
+  src: url('./fonts/Montserrat-Bold.woff2') format('woff2');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'MontserratThin';
+  src: url('./fonts/Montserrat-Thin.woff2') format('woff2');
+  font-weight: thin;
+  font-style: normal;
+  font-display: swap;
+}
 :root {
   /* Font stacks */
   --font-sans: 'MontserratRegular', system-ui, sans-serif;
   --font-italic: 'MontserratLightItalic', system-ui, sans-serif;
+  --font-bold: 'MontserratBold', system-ui, sans-serif;
 
   /* Color palette */
   --color-base-dark:    #22506d;
@@ -35,6 +52,50 @@
 
   /* Border radius */
   --radius: 0.5rem;
+}
+.home-title {
+  font-family: var(--font-bold);
+  font-size: 5rem;
+  text-align: center;
+  margin: 0;
+  margin-bottom: var(--space-2);
+}
+
+.italic-line {
+  font-family: var(--font-italic);
+  font-style: italic;
+  font-size: 2rem;
+  text-align: center;
+  margin: 0;
+  margin-top: var(--space-1);
+}
+
+.title-home {
+  color: var(--color-base-dark);
+}
+
+.title-earths {
+  color: var(--color-midtone-bright);
+}
+
+.highlight-green {
+  color: var(--color-midtone-bright);
+}
+
+.header-title {
+  font-size: 1.5rem;
+  font-family: var(--font-sans);
+  display: flex;
+  align-items: center;
+}
+
+.title-home {
+  color: var(--color-base-dark);
+  margin-right: 0.3rem;
+}
+
+.title-earths {
+  color: var(--color-midtone-bright);
 }
 
 body {
@@ -59,4 +120,11 @@ button {
   border: none;
   border-radius: var(--radius);
   cursor: pointer;
+}
+
+.button-wrapper {
+  text-align: center;
+  font-size: 1.5rem;
+  padding: 0.75rem 2.5rem;
+  margin-top: var(--space-4);
 }
