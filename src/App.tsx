@@ -3,8 +3,8 @@ import React from 'react';
 import './App.css';
 
 const App: React.FC = () => (
-  <div style={{ fontFamily: 'sans-serif', textAlign: 'center', marginTop: '2rem' }}>
-    <h1>Hello World!</h1>
+  <div style={{ fontFamily: 'Montserrat-Medium', textAlign: 'center', marginTop: '2rem' }}>
+    <h1>Hello Wooooooooorld!</h1>
     <p>Web Dev testing.</p>
   </div>
 );
