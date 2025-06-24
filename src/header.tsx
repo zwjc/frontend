@@ -3,18 +3,44 @@ import { Link } from 'react-router-dom';
 import logo from './images/logo.png';
 
 const Header: React.FC = () => (
-  <header style={{ background: 'var(--color-neutral-cool)', padding: 'var(--space-3)' }}>
-    <nav style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-      <Link to="/" style={{ display: 'flex', alignItems: 'center', color: 'white', textDecoration: 'none' }}>
-        <img src={logo} alt="Logo" style={{ height: '80px', marginRight: '1rem' }} />
-        <h1 className="header-title">
-          <span className="title-home">Home</span>
-          <span className="title-earths">Earths</span>
-        </h1>
+  <header
+    style={{
+      background: 'var(--color-white)',
+      padding: 'var(--space-2)',
+      marginBottom: 'var(--space-5)',
+      borderBottom: '1px solid #195833',
+    }}
+  >
+    <nav
+      style={{
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        gap: 'var(--space-5)',
+      }}
+    >
+      <Link
+        to="/"
+        style={{
+          display: 'flex',
+          alignItems: 'center',
+          color: 'white',
+          textDecoration: 'none',
+        }}
+      >
+        <img
+          src={logo}
+          alt="HomeEarths Logo"
+          style={{ height: '60px', marginRight: '1rem' }}
+        />
       </Link>
-      <div>
-        <Link to="/" style={{ margin: '0 var(--space-2)', color: '#9ea298' }}>Home</Link> {/*hide the link*/}
-        {/* More links */}
+
+  
+      <div style={{ display: 'flex', gap: 'var(--space-3)' }}>
+        <Link to="/products"   className="header-button">Products</Link>
+        <Link to="/about"      className="header-button">About Us</Link>
+        <Link to="/contact"    className="header-button">Contact</Link>
+
       </div>
     </nav>
   </header>
