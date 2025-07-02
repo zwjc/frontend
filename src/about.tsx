@@ -18,7 +18,7 @@ const About: React.FC = () => {
         transition={{ duration: 1, delay: 0.3 }}
         style={{ fontSize: '1.2rem', lineHeight: 1.6, maxWidth: '800px', margin: '0 auto' }}
       >
-        [Your company story, mission, and values will go here. This is placeholder text. Replace it with your own compelling narrative about what makes your brand unique.]
+        [About info]
       </motion.p>
     </div>
   );
