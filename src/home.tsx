@@ -1,23 +1,53 @@
 import React from 'react';
-import Layout from './layout';
-import Button from './button';
-import './theme.css';
+import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
-const Home: React.FC = () => (
-<Layout>
-  <h1 className="home-title">
-    <span className="title-home">Home</span>
-    <span className="title-earths">Earths</span>
-  </h1>
+const Home: React.FC = () => {
+  const products = [
+    { id: 1, name: 'Product 1', price: '$100', image: 'https://via.placeholder.com/300' },
+    { id: 2, name: 'Product 2', price: '$150', image: 'https://via.placeholder.com/300' },
+    { id: 3, name: 'Product 3', price: '$200', image: 'https://via.placeholder.com/300' },
+  ];
 
-  <p className="italic-line">
-    Grow <span className="highlight-green">Green</span> at Home
-  </p>
-  
-  <div className="button-wrapper">
-    <Button variant="secondary">Get Started</Button>
-  </div>
-</Layout>
-);
+  return (
+    <div className="container">
+      <motion.section
+        className="hero"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1 }}
+      >
+        <h1>HomeEarths</h1>
+        <p>Discover our new collection</p>
+        <Link to="/shop" className="cta-button">Shop Now</Link>
+      </motion.section>
+
+      <motion.section
+        className="featured-products"
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1, delay: 0.5 }}
+      >
+        <h2>Featured Products</h2>
+        <div className="product-grid">
+          {products.map((product) => (
+            <motion.div
+              key={product.id}
+              className="product-card"
+              whileHover={{ scale: 1.05 }}
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+            >
+              <img src={product.image} alt={product.name} />
+              <h3>{product.name}</h3>
+              <p>{product.price}</p>
+            </motion.div>
+          ))}
+        </div>
+      </motion.section>
+    </div>
+  );
+};
 
 export default Home;
