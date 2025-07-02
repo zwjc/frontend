@@ -6,6 +6,7 @@ import Shop from './shop';
 import About from './about';
 import Contact from './contact';
 import logo from './images/logo.png';
+import ProductDetail from './productDetail';
 import Footer from './footer';
 
 const App: React.FC = () => {
@@ -36,6 +37,7 @@ const App: React.FC = () => {
           <Route path="/shop" element={<Shop />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/product/:id" element={<ProductDetail />} />
         </Routes>
       </main>
       <Footer />
