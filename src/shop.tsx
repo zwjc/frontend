@@ -19,7 +19,7 @@ const Shop: React.FC = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await fetch('http://localhost:3000/products');
+        const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/products`);
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
@@ -44,7 +44,7 @@ const Shop: React.FC = () => {
 
     try {
       const parsedToken = JSON.parse(token);
-      const response = await fetch('http://localhost:3000/cart/items', {
+      const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/cart/items`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

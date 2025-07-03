@@ -12,7 +12,7 @@ const AuthForm: React.FC = () => {
     e.preventDefault();
     setMessage('');
 
-    const endpoint = isLogin ? 'http://localhost:3000/auth/signin' : 'http://localhost:3000/auth/signup';
+    const endpoint = isLogin ? `${process.env.REACT_APP_BACKEND_URL}/auth/signin` : `${process.env.REACT_APP_BACKEND_URL}/auth/signup`;
 
     try {
       const response = await fetch(endpoint, {
@@ -45,7 +45,7 @@ const AuthForm: React.FC = () => {
   };
 
   const handleGoogleSignIn = () => {
-    window.location.href = 'http://localhost:3000/auth/google';
+    window.location.href = `${process.env.REACT_APP_BACKEND_URL}/auth/google`;
   };
 
   return (

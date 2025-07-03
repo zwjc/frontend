@@ -36,7 +36,7 @@ const App: React.FC = () => {
       const token = localStorage.getItem('supabase.auth.token');
       if (token) {
         const parsedToken = JSON.parse(token);
-        await fetch('http://localhost:3000/auth/logout', {
+        await fetch(`${process.env.REACT_APP_BACKEND_URL}/auth/logout`, {
           method: 'GET',
           headers: {
             'Authorization': `Bearer ${parsedToken.access_token}`,

@@ -29,7 +29,7 @@ const Cart: React.FC = () => {
 
     try {
       const parsedToken = JSON.parse(token);
-      const response = await fetch('http://localhost:3000/cart', {
+      const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/cart`, {
         headers: {
           'Authorization': `Bearer ${parsedToken.access_token}`,
         },
@@ -57,7 +57,7 @@ const Cart: React.FC = () => {
 
     try {
       const parsedToken = JSON.parse(token);
-      const response = await fetch(`http://localhost:3000/cart/items/${productId}` , {
+      const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/cart/items/${productId}` , {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -83,7 +83,7 @@ const Cart: React.FC = () => {
 
     try {
       const parsedToken = JSON.parse(token);
-      const response = await fetch(`http://localhost:3000/cart/items/${productId}`, {
+      const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/cart/items/${productId}`, {
         method: 'DELETE',
         headers: {
           'Authorization': `Bearer ${parsedToken.access_token}`,
