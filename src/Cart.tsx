@@ -49,7 +49,7 @@ const Cart: React.FC = () => {
 
   useEffect(() => {
     fetchCart();
-  }, []);
+  }, [fetchCart]);
 
   const handleUpdateQuantity = async (productId: string, newQuantity: number) => {
     const token = localStorage.getItem('supabase.auth.token');
