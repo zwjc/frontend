@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 interface CartItem {
@@ -20,7 +20,7 @@ const Cart: React.FC = () => {
   const [error, setError] = useState<string | null>(null);
   const navigate = useNavigate();
 
-  const fetchCart = async () => {
+  const fetchCart = useCallback(async () => {
     const token = localStorage.getItem('supabase.auth.token');
     if (!token) {
       navigate('/auth'); // Redirect to login if not authenticated
@@ -45,7 +45,7 @@ const Cart: React.FC = () => {
     } finally {
       setLoading(false);
     }
-  };
+  }, [navigate, setCartItems, setError, setLoading]);
 
   useEffect(() => {
     fetchCart();
