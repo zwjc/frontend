@@ -18,7 +18,7 @@ const Contact: React.FC = () => {
         transition={{ duration: 1, delay: 0.3 }}
         style={{ fontSize: '1.2rem', lineHeight: 1.6, maxWidth: '800px', margin: '0 auto' }}
       >
-        [Contact info]
+        Test website for me
       </motion.p>
     </div>
   );
