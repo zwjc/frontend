@@ -305,6 +305,12 @@ body {
     }
   }
 
+  .header-right {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
   @media (max-width: 768px) {
     .header {
       flex-direction: row;
@@ -313,19 +319,25 @@ body {
     }
 
     .nav-links {
-      display: none;
       flex-direction: column;
       position: absolute;
-      top: 70px;
+      top: 100%;
       left: 0;
       background-color: #FDF5E6;
       width: 100%;
       padding: 1rem 0;
-      border-bottom: 1px solid #EAE0D5;
+      border-top: 1px solid #EAE0D5;
+      transform: translateY(-100%);
+      transition: transform 0.3s ease-out, opacity 0.3s ease-out, height 0.3s ease-out;
+      opacity: 0;
+      height: 0;
+      overflow: hidden;
     }
 
     .nav-links.open {
-      display: flex;
+      transform: translateY(0);
+      opacity: 1;
+      height: auto;
     }
 
     .hamburger {
