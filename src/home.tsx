@@ -31,26 +31,7 @@ const Home: React.FC = () => {
         </div>
       </motion.section>
 
-            <motion.div
-        style={{
-          y,
-          position: 'fixed',
-          bottom: '20px',
-          right: '20px',
-          width: '50px',
-          height: '50px',
-          backgroundColor: '#8B4513',
-          borderRadius: '50%',
-          zIndex: 100,
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          color: 'white',
-          fontWeight: 'bold',
-        }}
-      >
-        Scroll
-      </motion.div>
+            
 
 
       <motion.section
