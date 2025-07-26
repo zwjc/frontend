@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 
 const Home: React.FC = () => {
@@ -9,8 +9,7 @@ const Home: React.FC = () => {
     { id: 3, name: 'Product 3', price: '$200' },
   ];
 
-  const { scrollYProgress } = useScroll();
-  const y = useTransform(scrollYProgress, [0, 1], [0, 200]);
+  
 
   return (
     <>
