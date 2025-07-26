@@ -14,6 +14,7 @@ import Footer from './footer';
 
 const App: React.FC = () => {
   const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false);
+  const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
   const navigate = useNavigate(); // Use useNavigate hook
 
   useEffect(() => {
@@ -62,20 +63,27 @@ const App: React.FC = () => {
         <Link to="/">
           <img src={logo} alt="HomeEarths Logo" className="logo-img" />
         </Link>
-        <nav className="nav-links">
-          <Link to="/" className="nav-link">Home</Link>
-          <Link to="/shop" className="nav-link">Shop</Link>
-          <Link to="/about" className="nav-link">About</Link>
-          <Link to="/contact" className="nav-link">Contact</Link>
+        <button className="hamburger" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+        <nav className={`nav-links ${isMenuOpen ? 'open' : ''}`}>
+          <Link to="/" className="nav-link" onClick={() => setIsMenuOpen(false)}>Home</Link>
+          <Link to="/shop" className="nav-link" onClick={() => setIsMenuOpen(false)}>Shop</Link>
+          <Link to="/about" className="nav-link" onClick={() => setIsMenuOpen(false)}>About</Link>
+          <Link to="/contact" className="nav-link" onClick={() => setIsMenuOpen(false)}>Contact</Link>
           {isAuthenticated ? (
             <>
-              <Link to="/profile" className="nav-link">Profile</Link>
-              <button onClick={handleLogout} className="nav-link" style={{ background: 'none', border: 'none', color: 'inherit', cursor: 'pointer', fontSize: 'inherit', fontFamily: 'inherit' }}>Logout</button>
+              <Link to="/profile" className="nav-link" onClick={() => setIsMenuOpen(false)}>Profile</Link>
+              <button onClick={() => { handleLogout(); setIsMenuOpen(false); }} className="nav-link" style={{ background: 'none', border: 'none', color: 'inherit', cursor: 'pointer', fontSize: 'inherit', fontFamily: 'inherit' }}>Logout</button>
             </>
           ) : (
-            <Link to="/auth" className="nav-link">Login/Sign Up</Link>
+            <Link to="/auth" className="nav-link" onClick={() => setIsMenuOpen(false)}>Login/Sign Up</Link>
           )}
-          <Link to="/cart" className="nav-link">Cart</Link>
+          <Link to="/cart" className="nav-link" onClick={() => setIsMenuOpen(false)}>Cart</Link>
         </nav>
         <Link to="/cart" className="cart-icon">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
