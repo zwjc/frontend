@@ -48,8 +48,9 @@ body {
   .nav-link {
     color: #3B2F2F;
     text-decoration: none;
-    font-size: 1rem;
-    font-weight: 500;
+    font-size: 1.1rem;
+    font-weight: 700;
+    font-family: 'Montserrat Bold', sans-serif;
     position: relative;
     transition: color 0.3s ease;
   }
@@ -121,18 +122,18 @@ body {
     font-size: 6rem;
     font-weight: bold;
     margin-bottom: 1rem;
-    color: #FFFFFF;
+    color: #FFFFF0;
   }
 
   .hero p {
     font-size: 1.5rem;
     margin-bottom: 2.5rem; 
-    color: #EAE0D5;
+    color: #FFFFF0;
   }
 
   .cta-button {
     background-color: #8B4513;
-    color: #FFFFFF;
+    color: #FFFFF0;
     padding: 1rem 2.5rem;
     text-decoration: none;
     font-weight: bold;
